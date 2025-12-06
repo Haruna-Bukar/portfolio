@@ -99,3 +99,40 @@ document.addEventListener('DOMContentLoaded', function() {
 // You can add mobile hamburger menu functionality here later if needed
 
 console.log('Portfolio loaded successfully! 🚀');
+
+// ========================================
+// MOBILE MENU TOGGLE
+// ========================================
+
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.getElementById('navMenu');
+const navLinks = document.querySelectorAll('.nav-link');
+
+// Toggle menu when hamburger is clicked
+navToggle.addEventListener('click', function() {
+    navToggle.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    
+    // Prevent body scroll when menu is open
+    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
+});
+
+// Close menu when a link is clicked
+navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        navToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', function(event) {
+    const isClickInsideNav = navToggle.contains(event.target) || navMenu.contains(event.target);
+    
+    if (!isClickInsideNav && navMenu.classList.contains('active')) {
+        navToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
