@@ -357,6 +357,50 @@ body {
         justify-content: center;
     }
 }
+
+
+/* Social Links in Contact Section */
+.contact-links {
+    margin-top: var(--spacing-md);
+}
+
+.contact-links-title {
+    font-size: 1rem;
+    color: var(--medium-gray);
+    margin-bottom: var(--spacing-sm);
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.social-link svg {
+    width: 24px;
+    height: 24px;
+}
 /* ========================================
    IMAGE STYLES
    ======================================== */
